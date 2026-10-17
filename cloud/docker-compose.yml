@@ -5,26 +5,9 @@ services:
     env_file: .env
     volumes:
       - relay-data:/data
-    # Only Caddy talks to the relay; it is not published on the host.
+    # Only Caddy should talk to the relay; it is not published on the host.
     expose:
       - "8000"
 
-  caddy:
-    image: caddy:2.8
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      - RELAY_DOMAIN=${RELAY_DOMAIN}
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy-data:/data
-      - caddy-config:/config
-    depends_on:
-      - relay
-
 volumes:
   relay-data:
-  caddy-data:
-  caddy-config:
