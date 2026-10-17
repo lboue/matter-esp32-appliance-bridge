@@ -1,0 +1,14 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+# Waveshare ESP32-S3-ETH: 16MB flash. The web UI is embedded in the app image
+# (see main/CMakeLists.txt), so an OTA update carries it and no separate
+# filesystem partition is needed.
+# Firmware partition offset needs to be 64K aligned; the first 36K (9 sectors)
+# are reserved for the bootloader and partition table.
+esp_secure_cert,  0x3F, ,0xd000,    0x2000, encrypted
+nvs,      data, nvs,     0x10000,   0x20000,
+nvs_keys, data, nvs_keys,0x30000,   0x1000, encrypted
+otadata,  data, ota,     0x31000,   0x2000
+phy_init, data, phy,     0x33000,   0x1000,
+ota_0,    app,  ota_0,   0x40000,   0x600000,
+ota_1,    app,  ota_1,   0x640000,  0x600000,
+fctry,    data, nvs,     0xC40000,  0x6000

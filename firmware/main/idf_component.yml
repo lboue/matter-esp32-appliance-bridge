@@ -1,0 +1,5 @@
+dependencies:
+  espressif/esp_matter:
+    version: ^1.5.0
+  espressif/mdns: '*'
+  espressif/esp_websocket_client: ^1.2.3

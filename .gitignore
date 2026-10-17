@@ -1,0 +1,8 @@
+firmware/build/
+firmware/managed_components/
+firmware/sdkconfig
+firmware/sdkconfig.old
+firmware/dependencies.lock
+firmware/html_app/node_modules/
+firmware/html_compiled_app/
+.vscode/

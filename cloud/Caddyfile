@@ -1,0 +1,10 @@
+{$RELAY_DOMAIN} {
+	tls {
+		# RSA, not Caddy's default ECDSA: the ESP32-S3 has no ECC accelerator,
+		# and an ECDSA handshake in software is slow enough to time out.
+		key_type rsa2048
+	}
+
+	encode gzip
+	reverse_proxy relay:8000
+}
