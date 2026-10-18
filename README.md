@@ -1,7 +1,7 @@
 # Matter Appliance Bridge
 
 A Matter bridge for cloud-connected home appliances, running on the Waveshare
-ESP32-S3-ETH (W5500 Ethernet). Each appliance becomes a Bridged Node that any
+ESP32-S3-ETH (W5500 Ethernet). Each appliance becomes a `Bridged Node` that any
 Matter controller can see and control.
 
 It currently supports:
